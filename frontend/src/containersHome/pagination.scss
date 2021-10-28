@@ -1,0 +1,121 @@
+.pagination_ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagination_li{
+  display: inline;
+}
+
+.previous_button{
+  color:#ffffff;
+  width: 80px;
+  padding: 3px 5px 3px 8px;
+  border-radius: 15px 2px 2px 15px;
+  border: 3px solid white;
+  font-weight: bolder;
+  background-color: transparent;
+}
+.previous_button:hover{
+  box-shadow: 10px 0 15px 9px #ffc42e inset;
+  border: 3px solid #ffc42e;
+  transition: box-shadow, border 0.3s;
+}
+
+.next_button{
+  color:#ffffff;
+  width: 80px;
+  padding: 3px 8px 3px 5px;
+  border-radius: 2px 15px 15px 2px;
+  border: 3px solid white;
+  font-weight: bolder;
+  background-color: transparent;
+}
+.next_button:hover{
+  box-shadow: -10px 0 15px 3px #ffc42e inset;
+  border: 3px solid #ffc42e;
+  transition: box-shadow, border 0.3s;
+}
+
+.number_buttons{
+  color:#ffffff;
+  font-weight: bolder;
+  padding: 3px;
+  border: 3px solid white;
+  width: 30px;
+  background-color: transparent;
+}
+.number_buttons:hover{
+  box-shadow: 2px  0 15px 3px #ffc42e inset;
+  border: 3px solid #ffc42e;
+  transition: box-shadow, border 0.3s;
+}
+
+.number_buttons_current{
+  color: #ffffff;
+  font-weight: bolder;
+  padding: 3px;
+  border: 3px solid #47cff3;
+  width: 30px;
+  border-radius: 2px;
+  box-shadow: 0 0 15px 10px #47cff3 inset;
+  background-color: transparent;
+}
+.number_buttons_current:hover{
+  box-shadow: 0 0 15px 20px #47cff3 inset;
+  transition: box-shadow, color 0.3s;
+}
+
+@media only screen and (min-height: 700px){
+  .pagination_ul{
+    margin-top: 100px;
+  }
+  .number_buttons{
+    height: 50px;
+  }
+  .previous_button{
+    height: 50px;
+  }
+  .next_button{
+    height: 50px;
+  }
+  .number_buttons_current{
+    height: 50px;
+  }
+}
+@media only screen and (min-height: 800px){
+  .pagination_ul{
+    margin-top: 200px;
+  }
+}
+@media only screen and (min-height: 900px){
+  .pagination_ul{
+    margin-top: 300px;
+  }
+}
+
+@media only screen and (min-width: 500px){
+  .number_buttons{
+    font-size: larger;
+    height: 50px;
+    width: 50px;
+  }
+  .previous_button{
+    font-size: larger;
+    height: 50px;
+    width: 100px;
+  }
+  .next_button{
+    font-size: larger;
+    height: 50px;
+    width: 100px;
+  }
+  .number_buttons_current{
+    font-size: larger;
+    height: 50px;
+    width: 50px;
+  }
+}

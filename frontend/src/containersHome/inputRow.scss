@@ -1,0 +1,79 @@
+.home_new_todo_row{
+  text-align: center;
+  justify-content: center;
+}
+
+.home_row_children{
+  margin: 10px 0 15px 0;
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.home_new_todo_input{
+  width: 90%;
+  border-radius: 15px;
+  border: 3px solid #ffc42e;
+  padding: 5px;
+}
+.home_new_todo_input:focus{
+  outline: none;
+  box-shadow: 0 0 20px 3px #ffc42e;
+  transition: box-shadow 0.3s;
+}
+
+.home_row_buttons{
+  cursor:pointer;
+  font-weight: bold;
+  color: white;
+  border: 3px solid white;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  border-radius: 15px;
+  padding: 5px;
+}
+.home_row_buttons:hover{
+  border: 3px solid #88eaea;
+  box-shadow: 0 0 15px 8px #88eaea inset;
+  transition: box-shadow, border 0.3s;
+}
+
+@media only screen and (min-width: 450px){
+  .home_new_todo_input{
+    width: 70%;
+  }
+  .home_row_buttons{
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 700px){
+  .home_new_todo_input{
+    width: 65%;
+  }
+  .home_row_buttons{
+    width: 35%;
+  }
+}
+@media only screen and (min-width: 1000px){
+  .home_new_todo_row{
+    display: flex;
+  }
+  .home_new_todo_input{
+    height: 50px;
+    width: 450px;
+    font-size: larger;
+    margin: 30px;
+  }
+  .home_row_buttons{
+    height:50px;
+    width: auto;
+    font-size: larger;
+    margin: 30px;
+    padding: 8px 25px 0 25px;
+  }
+}
+
+
+
+

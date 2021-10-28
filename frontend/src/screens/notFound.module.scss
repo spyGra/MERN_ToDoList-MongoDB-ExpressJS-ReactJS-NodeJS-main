@@ -1,0 +1,36 @@
+.errorBoard{
+  width: 70%;
+  height: 70%;
+  background-color: rgba(128, 0, 128, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position:relative;
+}
+
+.errorPage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.sorryText{
+  font-size: 80px;
+}
+
+.errorText{
+  font-size:40px;
+}
+
+.returnText{
+  font-size:40px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.returnText:hover{
+  color: #948383;
+}

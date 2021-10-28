@@ -1,0 +1,90 @@
+.todos_button_sun{
+  border: 1px solid white;
+  padding: 5px 15px 5px 15px;
+  margin: 10px;
+  border-radius: 25px;
+  color:white;
+  font-weight: bold;
+  min-width: 280px;
+  background-image: linear-gradient(90deg, #ffa62e 0%, #effc3e 49%, #ffa62e 100%)
+}
+.sun:hover{
+  background-image: linear-gradient(90deg, #ffa62e 0%, #effc3e 49%, #ffa62e 100%);
+  animation:slide_colors 6s linear infinite;
+}
+@keyframes slide_colors {
+  to {
+    background-position:100vw;
+  }
+}
+
+.todos_button_moon{
+  border: 1px solid white;
+  padding: 5px 15px 5px 15px;
+  margin: 10px;
+  border-radius: 25px;
+  color: #020202;
+  font-weight: bold;
+  min-width: 280px;
+  background-image: linear-gradient(90deg, #cbc9c9 0%, #ffffff 49%, #cbc9c9 100%)
+}
+.moon:hover{
+  background-image: linear-gradient(90deg, #cbc9c9 0%, #ffffff 49%, #cbc9c9 100%);
+  animation:slide_colors 6s linear infinite;
+}
+
+
+.todos_table{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  height: 305px;
+  width: auto;
+  padding:0;
+  margin:0;
+}
+
+@media only screen and (min-height: 700px){
+  .todos_button_sun{
+    height: 55px;
+  }
+  .todos_button_moon{
+    height: 55px;
+  }
+  .todos_table{
+    margin-top: 50px;
+  }
+}
+@media only screen and (min-height: 800px){
+  .todos_button_sun{
+    height: 65px;
+  }
+  .todos_button_moon{
+    height: 65px;
+  }
+}
+
+@media only screen and (min-width: 600px){
+  .todos_button_sun{
+    padding: 0 80px 0 80px;
+    font-size: larger;
+    min-width: 450px;
+  }
+  .todos_button_moon{
+    padding: 0 80px 0 80px;
+    font-size: larger;
+    min-width: 450px;
+  }
+}
+@media only screen and (min-width: 1000px){
+  .todos_button_sun{
+    padding: 0 100px 0 100px;
+    font-size: larger;
+    min-width: 500px;
+  }
+  .todos_button_moon{
+    padding: 0 100px 0 100px;
+    font-size: larger;
+    min-width: 500px;
+  }
+}
