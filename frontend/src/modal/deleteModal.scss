@@ -35,8 +35,8 @@
 }
 
 .delete_modal_card_x_button{
-  height: 29px;
-  width: 29px;
+  height: 30px;
+  width: 30px;
   position:absolute;
   left: 219px;
   top: -4px;
@@ -73,17 +73,18 @@
   position: absolute;
   top: 45px;
   padding: 5px;
+  width: 100%;
 }
 
 .delete_modal_card_x_button:hover ~ .delete_modal_card_style{
-  box-shadow: -15px  10px 30px 10px #b0f86d inset;
+  box-shadow: 0px  0px 5px 5px #b0f86d inset;
   background-color: #ffffff;
   transition: box-shadow 0.3s;
 }
 
 
 .delete_yes_button:hover ~ .delete_modal_card_style{
-  box-shadow: -15px  10px 30px 10px #ff0000 inset;
+  box-shadow: 0px  0px 5px 5px #ff0000 inset;
   background-color: #ffffff;
   transition: box-shadow 0.3s;
 }
@@ -93,12 +94,18 @@
   .delete_modal_card {
     width: 350px;
     font-size: 25px;
+
   }
   .delete_modal_card_style{
-    width: 350px;
+    width: 450px;
+    height: 250px;
+    top: -50px;
+    right: -50px;
+    position: absolute;
   }
   .delete_modal_card_x_button{
-    left: 315px;
+    left: 367px;
+    top: -55px;
   }
   .delete_yes_button{
     left:140px;
