@@ -9,6 +9,7 @@ const UpdateToDos = () => {
     const {toDoParams, id} = useParams()
     const history = useHistory()
     const {
+        setParamsName,
         setUpdateId,
         handleCompletedTasks,
         handleUpdateClick,
@@ -16,14 +17,15 @@ const UpdateToDos = () => {
         inputNewToDo,
         setCompletedTask,
         completedTask,
-        deletePost,
-        setInputNewToDo
+        setInputNewToDo,
+        handleDelete
     } = useTaskContext()
 
     useEffect(()=>{
         axios.get(`http://localhost:3001/findone/${id}`)
             .then(data=>setCompletedTask(data?.data[0]?.complete))
             .then(()=>setUpdateId(id))
+            .then(()=>setParamsName(toDoParams))
     },[id])
 
     return(
@@ -60,8 +62,8 @@ const UpdateToDos = () => {
                 </div>
                 <div className="update_row_children">
                     <div
-                        className="update_row_buttons"
-                        onClick={deletePost}
+                        className="update_row_buttons delete"
+                        onClick={handleDelete}
                     >Delete</div>
                 </div>
                 <div className="update_row_children">

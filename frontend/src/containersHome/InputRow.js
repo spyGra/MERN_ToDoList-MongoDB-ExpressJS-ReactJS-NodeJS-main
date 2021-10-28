@@ -7,7 +7,7 @@ const InputRow = () => {
         handleNewToDoClick,
         handleNewToDoChange,
         inputNewToDo,
-        clearCompletedTasks
+        clearCompletedTasks,
     } = useTaskContext()
 
     return (

@@ -5,6 +5,7 @@ import Modal from "./modal/Modal";
 import UpdateToDos from "./screens/UpdateToDos";
 import Home from "./screens/Home";
 import NotFound from "./screens/NotFound";
+import DeleteModal from "./modal/DeleteModal";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ScreenLayout>
           <TasksContextProvider>
               <Modal />
+              <DeleteModal />
                   <Switch>
                       <Route path ="/updateTask/:toDoParams/:id">
                           <UpdateToDos />

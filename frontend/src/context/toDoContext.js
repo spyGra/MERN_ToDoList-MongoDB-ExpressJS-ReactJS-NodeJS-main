@@ -6,7 +6,9 @@ const toDoContext = createContext('')
 
 const TasksContextProvider = ({children}) => {
     const history = useHistory();
+    const [paramsName, setParamsName] = useState()
     const [toDoList, setToDoList] = useState([])
+    const [showDeleteModal, setShowDeleteModal] = useState(true)
     const [showModal, setShowModal] = useState(true)
     const [checkedItems, setCheckedItems] = useState([])
     const [inputNewToDo, setInputNewToDo] = useState({ task: "" })
@@ -18,6 +20,10 @@ const TasksContextProvider = ({children}) => {
 
     const changeModalVisibility = () => {
         setShowModal(!showModal)
+    }
+
+    const changeDeleteModalVisibility = () => {
+        setShowDeleteModal(!showDeleteModal)
     }
 
     const sendToUpdatePage = e =>{
@@ -95,15 +101,23 @@ const TasksContextProvider = ({children}) => {
             })
     }
 
+    const handleDelete = () => {
+        changeDeleteModalVisibility()
+    }
+
     const deletePost = () =>{
         axios.delete(`http://localhost:3001/delete/${updateId}`)
             .then(()=>{history.replace("/")
             })
+            .then(()=>changeDeleteModalVisibility())
             .catch(err=>console.log(err))
     }
 
     return(
         <toDoContext.Provider value={{
+            showDeleteModal,
+            paramsName,
+            setParamsName,
             showModal,
             toDoList,
             setToDoList,
@@ -121,6 +135,8 @@ const TasksContextProvider = ({children}) => {
             updateId,
             setCompletedTask,
             completedTask,
+            changeDeleteModalVisibility,
+            handleDelete,
             deletePost,
             handleCompletedTasks,
             handleUpdateClick,
