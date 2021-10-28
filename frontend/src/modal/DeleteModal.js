@@ -10,7 +10,7 @@ const DeleteModal = () => {
             <div className="delete_modal">
                 <div className="delete_modal_card">
                     <div className="delete_modal_card_x_button" onClick={changeDeleteModalVisibility}>x</div>
-                    <div className="delete_yes_button">YES</div>
+                    <div className="delete_yes_button" onClick={deletePost}>YES</div>
                     <div className="delete_modal_card_style">
                         <p className="delete_modal_p">Are you sure to delete "{paramsName}" task?</p>
                     </div>
