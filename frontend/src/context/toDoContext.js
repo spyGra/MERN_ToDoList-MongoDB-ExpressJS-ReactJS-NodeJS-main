@@ -8,6 +8,8 @@ const TasksContextProvider = ({children}) => {
     const history = useHistory();
     const [paramsName, setParamsName] = useState()
     const [toDoList, setToDoList] = useState([])
+    const [showLoginModal, setShowLoginModal] = useState(true)
+    const [showLogoutModal, setShowLogoutModal] = useState(true)
     const [showDeleteModal, setShowDeleteModal] = useState(true)
     const [showModal, setShowModal] = useState(true)
     const [checkedItems, setCheckedItems] = useState([])
@@ -17,6 +19,49 @@ const TasksContextProvider = ({children}) => {
     const [pageLength, setPageLength] = useState(5)
     const [updateId, setUpdateId] = useState(0)
     const [completedTask, setCompletedTask] =useState()
+    const [userLogin, setUserLogin] = useState()
+    const [inputUser, setInputUser] = useState({
+        userName: "",
+        userPassword: ""
+    })
+
+//users functions
+    const changeLoginModalVisibility = () => {
+        setShowLoginModal(!showLoginModal)
+    }
+
+    const handleNewUserRegistrationClick = (e) =>{
+        e.preventDefault()
+        axios.post("http://localhost:3001/adduser", inputUser)
+            .then((data)=>{
+                setInputUser({
+                        userName: "",
+                        userPassword: ""
+                })
+            })
+            .then(()=>history.push("/"))
+            .catch(err=> console.log(err))
+    }
+
+    const handleLogin = (e) =>{
+        e.preventDefault()
+        axios.get(`http://localhost:3001/login/${inputUser.userName}/${inputUser.userPassword}`)
+            .then(data=> {
+                if(data.data[0]._id){
+                    setUserLogin(data.data)
+                }
+            })
+            .catch(err=>{
+                changeLoginModalVisibility()
+                console.log(err)
+            })
+    }
+
+// home screen functions
+
+    const changeLogoutModalVisibility = () => {
+        setShowLogoutModal(!showLogoutModal)
+    }
 
     const changeModalVisibility = () => {
         setShowModal(!showModal)
@@ -26,12 +71,20 @@ const TasksContextProvider = ({children}) => {
         setShowDeleteModal(!showDeleteModal)
     }
 
+    const handleLogout = () => {
+        changeLogoutModalVisibility()
+    }
+
+    const handleDelete = () => {
+        changeDeleteModalVisibility()
+    }
+
     const sendToUpdatePage = e =>{
         const id = e.target.id;
         const task = toDoList.filter(
             item => item._id === id
         )
-        history.replace(`/updateTask/${task?.[0]?.task}/${task?.[0]?._id}/`)
+        history.replace(`/admin/updateTask/${task?.[0]?.task}/${task?.[0]?._id}/`)
     }
 
     const handleNewToDoChange=(event)=>{
@@ -71,7 +124,7 @@ const TasksContextProvider = ({children}) => {
             .catch(err=>console.log(err, "there are no checked items"))
     }
 
-    // update page functions
+// update screen functions
 
     const handleUpdateChange=(event)=>{
         const {name, value} = event.target
@@ -85,7 +138,7 @@ const TasksContextProvider = ({children}) => {
         } else {
             const newTask = { task: inputNewToDo.task }
             axios.put(`http://localhost:3001/update/${updateId}`, newTask)
-                .then(()=>history.replace("/"))
+                .then(()=>history.replace("/admin/home"))
                 .catch(err=>console.log(err))
         }
         setInputNewToDo({task: ""})
@@ -101,13 +154,9 @@ const TasksContextProvider = ({children}) => {
             })
     }
 
-    const handleDelete = () => {
-        changeDeleteModalVisibility()
-    }
-
     const deletePost = () =>{
         axios.delete(`http://localhost:3001/delete/${updateId}`)
-            .then(()=>{history.replace("/")
+            .then(()=>{history.replace("/admin/home")
             })
             .then(()=>changeDeleteModalVisibility())
             .catch(err=>console.log(err))
@@ -115,6 +164,12 @@ const TasksContextProvider = ({children}) => {
 
     return(
         <toDoContext.Provider value={{
+            setUserLogin,
+            userLogin,
+            inputUser,
+            setInputUser,
+            showLoginModal,
+            showLogoutModal,
             showDeleteModal,
             paramsName,
             setParamsName,
@@ -135,6 +190,11 @@ const TasksContextProvider = ({children}) => {
             updateId,
             setCompletedTask,
             completedTask,
+            changeLoginModalVisibility,
+            handleLogout,
+            changeLogoutModalVisibility,
+            handleLogin,
+            handleNewUserRegistrationClick,
             changeDeleteModalVisibility,
             handleDelete,
             deletePost,

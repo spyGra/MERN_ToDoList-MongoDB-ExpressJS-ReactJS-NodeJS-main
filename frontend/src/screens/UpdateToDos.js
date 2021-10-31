@@ -70,7 +70,7 @@ const UpdateToDos = () => {
                     <div
                         className="update_row_buttons"
                         onClick={()=> {
-                            history.replace("/")
+                            history.replace("/admin/home")
                             setInputNewToDo({task: ""})
                         }}
                     >Cancel</div>

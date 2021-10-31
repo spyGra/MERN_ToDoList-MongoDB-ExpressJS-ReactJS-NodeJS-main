@@ -1,7 +1,34 @@
 const express = require("express");
 const router = express.Router();
 const Task = require("./model")
+const User = require("./userModel")
 
+
+// user routes
+
+router.route("/adduser").post((req, res)=>{
+    const inputUser = req.body;
+    const newUser = new User({
+        userName: inputUser.userName,
+        userPassword: inputUser.userPassword
+    })
+    newUser.save().then(foundUser=>res.json(foundUser))
+})
+
+router.route("/login/:userName/:userPassword").get((req, res)=>{
+    const userName = req.params.userName;
+    const userPassword = req.params.userPassword;
+    User.find({userName: userName, userPassword: userPassword})
+        .then(foundData=> res.json(foundData))
+})
+
+// task routes
+
+router.route("/findone/:title").get((req, res)=>{
+    const id = req.params.title;
+    Task.find({_id: id})
+        .then(foundData=> res.json(foundData))
+})
 
 router.route("/addtask").post((req, res)=>{
     const task = req.body.task;
@@ -25,13 +52,6 @@ router.route("/alltasks").get((req, res)=>{
     Task.find()
         .then(foundData=> res.json(foundData))
 })
-
-router.route("/findone/:title").get((req, res)=>{
-    const id = req.params.title;
-    Task.find({_id: id})
-        .then(foundData=> res.json(foundData))
-})
-
 
 router.route("/delete/:title").delete((req, res)=>{
     const id = req.params.title;

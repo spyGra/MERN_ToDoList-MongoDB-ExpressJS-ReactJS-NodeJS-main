@@ -3,6 +3,7 @@ import InputRow from "../containersHome/InputRow";
 import Pagination from "../containersHome/Pagination";
 
 const Home = () => {
+
     return(
         <>
             <InputRow />

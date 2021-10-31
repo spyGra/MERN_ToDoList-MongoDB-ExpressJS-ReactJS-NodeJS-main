@@ -1,6 +1,6 @@
 .todos_button_sun{
   border: 1px solid white;
-  padding: 5px 15px 5px 15px;
+  padding: 4px 15px 4px 15px;
   margin: 10px;
   border-radius: 25px;
   color:white;
@@ -20,7 +20,7 @@
 
 .todos_button_moon{
   border: 1px solid white;
-  padding: 5px 15px 5px 15px;
+  padding: 4px 15px 4px 15px;
   margin: 10px;
   border-radius: 25px;
   color: #020202;
@@ -33,16 +33,16 @@
   animation:slide_colors 3s linear infinite;
 }
 
-
 .todos_table{
   display: flex;
   text-align: center;
   justify-content: center;
-  height: 305px;
+  height: 280px;
   width: auto;
   padding:0;
   margin:0;
 }
+
 
 @media only screen and (min-height: 700px){
   .todos_button_sun{

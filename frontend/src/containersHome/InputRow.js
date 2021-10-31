@@ -8,6 +8,7 @@ const InputRow = () => {
         handleNewToDoChange,
         inputNewToDo,
         clearCompletedTasks,
+        handleLogout
     } = useTaskContext()
 
     return (
@@ -35,6 +36,13 @@ const InputRow = () => {
                     className="home_row_buttons"
                     onClick={clearCompletedTasks}
                 >Clear Completed Tasks</div>
+            </div>
+            <div className="home_row_children">
+                <div
+                    className="home_row_buttons logout"
+                    onClick={handleLogout}
+                >Logout
+                </div>
             </div>
         </div>
     )

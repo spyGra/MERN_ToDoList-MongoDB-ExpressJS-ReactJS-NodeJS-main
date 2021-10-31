@@ -4,7 +4,7 @@
 }
 
 .home_row_children{
-  margin: 10px 0 15px 0;
+  margin: 2px 0 11px 0;
   display: flex;
   justify-content: center;
   width: auto;
@@ -39,6 +39,15 @@
   transition: box-shadow, border 0.3s;
 }
 
+.logout{
+  border: 3px solid #006fff;
+}
+.logout:hover{
+  border: 3px solid #006fff;
+  box-shadow: 0 0 5px 5px #006fff inset;
+  transition: border,color,box-shadow 0.3s;
+}
+
 @media only screen and (min-width: 450px){
   .home_new_todo_input{
     width: 70%;
@@ -63,6 +72,22 @@
     height: 50px;
     width: 450px;
     font-size: larger;
+    margin: 8px;
+  }
+  .home_row_buttons{
+    height:50px;
+    width: auto;
+    font-size: larger;
+    margin: 5px;
+    padding: 8px 25px 0 25px;
+  }
+}
+
+@media only screen and (min-width: 1500px){
+  .home_new_todo_input{
+    height: 50px;
+    width: 450px;
+    font-size: larger;
     margin: 30px;
   }
   .home_row_buttons{
@@ -73,7 +98,6 @@
     padding: 8px 25px 0 25px;
   }
 }
-
 
 
 
