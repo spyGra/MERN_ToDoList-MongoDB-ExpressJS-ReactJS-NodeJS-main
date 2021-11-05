@@ -1,9 +1,9 @@
 # MERN_ToDoList(MongoDB, ExpressJS, ReactJS, NodeJS).
 
-In order this app to work the user must use MongoDB [MongoDB_atlas site](https://www.mongodb.com/cloud/atlas).
-To connect with your db choose the "Connect your application method".
-Copy the string and paste it in server.js file.
-Replace the name, password and the name of the database.     
+## Requirements to run
+
+This app uses [MongoDB](https://www.mongodb.com/). The details for the connection
+should be placed in a .env file. The required fields can be found in .env.template. 
 
 ## Available Scripts
 

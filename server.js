@@ -9,7 +9,7 @@ require('dotenv').config()
 
 // Replace your connection string given from mongodb into your application code like the example.
 // Ensure any option params are URL encoded.
-mongoose.connect(`mongodb+srv://${process.env.SECRET_NAME}:${process.env.SECRET_PASSWORD}@express.6yjdu.mongodb.net/${process.env.SECRET_DATABASE_NAME}?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://${process.env.SECRET_NAME}:${process.env.SECRET_PASSWORD}@${process.env.DATABASE_IP}:${process.env.DATABASE_PORT}/${process.env.SECRET_DATABASE_NAME}?retryWrites=true&w=majority`)
 
 app.use("/", require("./routes"))
 
