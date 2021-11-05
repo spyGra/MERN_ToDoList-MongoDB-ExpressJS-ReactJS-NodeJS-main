@@ -24,7 +24,8 @@ The server runs in 3001 portal.
 
 ## Usage
 
-When the page first loads, the user will see an empty row that 
+When the page first loads the user can Login or Register. Then the 
+user will see an empty row that 
 says "Please add a new task..". The user can add a todo clicking
 "Add" button. The user can edit the todo simply by clicking on it.
 The user can delete, update, complete or un-complete a todo.
