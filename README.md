@@ -1,6 +1,6 @@
 # MERN_ToDoList(MongoDB, ExpressJS, ReactJS, NodeJS).
 
-The user should make a database in [MongoDB_atlas site](https://www.mongodb.com/cloud/atlas).
+In order this app to work the user must use MongoDB [MongoDB_atlas site](https://www.mongodb.com/cloud/atlas).
 To connect with your db choose the "Connect your application method".
 Copy the string and paste it in server.js file.
 Replace the name, password and the name of the database.     
