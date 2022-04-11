@@ -2,9 +2,7 @@
 
 ## Requirements to run
 
-This app uses [MongoDB](https://www.mongodb.com/). The details for the connection
-should be placed in a .env file. The required fields can be found in .env.template. 
-
+This app uses [MongoDB](https://www.mongodb.com/).
 ## Available Scripts
 
 In the project directory, you must run:
